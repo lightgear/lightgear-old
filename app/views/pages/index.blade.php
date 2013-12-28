@@ -16,11 +16,11 @@
             @foreach ($pages as $page)
                 <tr>
                     <td>{{ link_to_route('pages.show', $page->slug, array($page->slug)) }}</td>
-                    <td>{{ link_to_route('pages.edit', 'Edit', array($page->slug), array('class' => 'btn btn-info')) }}
+                    <td>{{ link_to_route('pages.edit', 'Edit', array($page->slug), array('class' => 'pure-button pure-button-primary')) }}
                     </td>
                     <td>
                         {{ Form::open(array('method' => 'DELETE', 'route' => array('pages.destroy', $page->slug))) }}
-                        {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                        {{ Form::submit('Delete', array('class' => 'pure-button')) }}
                         {{ Form::close() }}
                     </td>
                 </tr>

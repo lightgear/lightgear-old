@@ -17,7 +17,11 @@
   src: url('../fonts/opensans/OpenSans-Bold.eot');
   src: local('☺'), url('../fonts/opensans/OpenSans-Bold.woff') format('woff'), url('../fonts/opensans/OpenSans-Bold.ttf') format('truetype');
 }
-html {
+html,
+button,
+input,
+select,
+textarea {
   color: #333333;
   background: #fcfcfc f;
   font-family: 'Open Sans';
