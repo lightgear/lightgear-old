@@ -1,13 +1,5 @@
 <?php
 
-/*use View,
-    Input,
-    Redirect;
-
-use Lightgear\Base\Controllers\ResourceController;
-use Lightgear\Content\Models\Page;*/
-
-
 class PagesController extends ResourceController {
 
     protected $page;
