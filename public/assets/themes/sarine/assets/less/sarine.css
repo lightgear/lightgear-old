@@ -1,0 +1,88 @@
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('../fonts/opensans/OpenSans-Light.eot');
+  src: local('☺'), url('../fonts/opensans/OpenSans-Light.woff') format('woff'), url('../fonts/opensans/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans/OpenSans-Regular.eot');
+  src: local('☺'), url('../fonts/opensans/OpenSans-Regular.woff') format('woff'), url('../fonts/opensans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url('../fonts/opensans/OpenSans-Bold.eot');
+  src: local('☺'), url('../fonts/opensans/OpenSans-Bold.woff') format('woff'), url('../fonts/opensans/OpenSans-Bold.ttf') format('truetype');
+}
+html {
+  color: #333333;
+  background: #fcfcfc f;
+  font-family: 'Open Sans';
+}
+.toolbar {
+  margin-bottom: 1%;
+  padding: 0 1%;
+  line-height: 2.5em;
+  color: #ffffff;
+  background: #542331;
+  -moz-box-shadow: 0 2px 2px 0 #b3b3b3;
+  -webkit-box-shadow: 0 2px 2px 0 #b3b3b3;
+  box-shadow: 0 2px 2px 0 #b3b3b3;
+}
+.toolbar .user-info {
+  float: right;
+  font-size: 90%;
+}
+.toolbar a {
+  color: #ffffff;
+}
+form ul {
+  padding: 0;
+  list-style: none;
+}
+form li {
+  display: block;
+  margin-bottom: 1em;
+}
+label {
+  display: block;
+  margin-bottom: .2em;
+}
+textarea,
+input[type="text"],
+input[type="password"],
+.cke_textarea_inline {
+  padding: .4em .6em;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+.cke_textarea_inline:focus {
+  border-color: #757575;
+  background: #fcfcfc f;
+  outline: none;
+}
+textarea {
+  height: 100px;
+}
+.cke_textarea_inline {
+  min-height: 8em;
+}
+.message {
+  padding: .8em 1em;
+  list-style: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+.message.error {
+  color: #db0000;
+  background: #ffd6d6;
+}
