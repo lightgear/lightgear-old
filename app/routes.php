@@ -44,3 +44,25 @@ Route::resource(
         'only' => array('index', 'show')
     )
 );
+
+
+// Tags
+Route::group(array('before' => 'auth'), function() {
+    Route::resource(
+        'tags',
+        'TagsController',
+        array(
+            'except' => array('index', 'show')
+        )
+    );
+
+    Route::get('tags/{tags}/delete', array('uses' => 'TagsController@delete', 'as' => 'tags.delete'));
+});
+
+Route::resource(
+    'tags',
+    'TagsController',
+    array(
+        'only' => array('index', 'show')
+    )
+);

@@ -18,13 +18,8 @@ class Page extends BaseModel {
         'save_to'    => 'slug'
     );
 
-    public function widgets()
+    public function tags()
     {
-        return $this->hasMany('Lightgear\Content\Models\Widget');
+        return $this->hasMany('Tag');
     }
-
-    /*public static function boot()
-    {
-        parent::boot();
-    }*/
 }
