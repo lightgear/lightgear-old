@@ -4,9 +4,15 @@ class PagesController extends ResourceController {
 
     protected $page;
 
+    protected $input;
+
     public function __construct(Page $page)
     {
         $this->page = $page;
+
+        $this->input = Input::all();
+
+        $this->beforeFilter('@filterInput', array('only' => array('store', 'update')));
     }
 
     public function index()
@@ -27,7 +33,7 @@ class PagesController extends ResourceController {
 
     public function store()
     {
-        if ($this->page->fill(Input::all())->save())
+        if ($this->page->fill($this->input)->save())
         {
             return Redirect::route('pages.index');
         }
@@ -64,7 +70,7 @@ class PagesController extends ResourceController {
     {
         $page = $this->getPageBySlug($slug);
 
-        if ($page->update(Input::all()))
+        if ($page->update($this->input))
         {
             return Redirect::route('pages.show', $slug);
         }
@@ -88,9 +94,16 @@ class PagesController extends ResourceController {
         return Redirect::route('pages.index');
     }
 
+    public function filterInput()
+    {
+        if ( ! isset($this->input['published']))
+        {
+            $this->input['published'] = 0;
+        }
+    }
+
     protected function getPageBySlug($slug)
     {
         return $this->page->where('slug', '=', $slug)->first();
     }
-
 }

@@ -5,7 +5,8 @@ class Page extends BaseModel {
     protected $fillable = array(
         'title',
         'body',
-        'slug'
+        'slug',
+        'published'
     );
 
     public static $rules = array(

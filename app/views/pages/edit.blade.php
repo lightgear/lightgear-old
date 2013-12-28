@@ -13,6 +13,10 @@
             {{ Form::textarea('body') }}
         </li>
         <li>
+            {{ Form::label('published', 'Published:') }}
+            {{ Form::checkbox('published') }}
+        </li>
+        <li>
             {{ Form::submit('Update', array('class' => 'pure-button pure-button-primary')) }}
             {{ link_to_route('pages.show', 'Cancel', $page->slug, array('class' => 'pure-button')) }}
         </li>

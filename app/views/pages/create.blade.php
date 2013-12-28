@@ -13,6 +13,10 @@
             {{ Form::textarea('body') }}
         </li>
         <li>
+            {{ Form::label('published', 'Published:') }}
+            {{ Form::checkbox('published') }}
+        </li>
+        <li>
             {{ Form::submit('Submit', array('class' => 'pure-button pure-button-primary')) }}
         </li>
     </ul>

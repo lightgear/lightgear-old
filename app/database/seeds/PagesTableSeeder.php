@@ -9,6 +9,7 @@ class PagesTableSeeder extends Seeder {
                 'title' => 'Page 1',
                 'body' => 'Page 1 body',
                 'slug' => 'page-1',
+                'published' => 1,
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
             ),
@@ -16,6 +17,7 @@ class PagesTableSeeder extends Seeder {
                 'title' => 'Page 2',
                 'body' => 'Page 2 body',
                 'slug' => 'page-2',
+                'published' => 1,
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
             )
