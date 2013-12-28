@@ -13,7 +13,9 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    View::share('title', 'Homepage (i18n)');
+
+	return View::make('home');
 });
 
 // Authentication
