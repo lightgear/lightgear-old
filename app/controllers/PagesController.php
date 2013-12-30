@@ -13,6 +13,7 @@ class PagesController extends ResourceController {
         $this->input = Input::all();
 
         $this->beforeFilter('@filterInput', array('only' => array('store', 'update')));
+        $this->beforeFilter('@getPageBySlug', array('except' => array('index', 'create', 'store')));
     }
 
     public function index()
@@ -47,57 +48,50 @@ class PagesController extends ResourceController {
 
     public function show($slug)
     {
-        $page = $this->getPageBySlug($slug);
+        View::share('title', $this->page->title);
 
-        View::share('title', $page->title);
-
-        return View::make('pages.show', compact('page'));
+        return View::make('pages.show', array('page' => $this->page));
     }
 
     public function edit($slug)
     {
-        $page = $this->getPageBySlug($slug);
-
         $tags = Tag::allNames();
 
-        if (is_null($page))
+        if (is_null($this->page))
         {
             return Redirect::route('pages.index');
         }
 
-        View::share('title', 'Editing page (i18n) "' . $page->title . '"');
+        View::share('title', 'Editing page (i18n) "' . $this->page->title . '"');
 
-        return View::make('pages.edit', compact('page', 'tags'));
+        return View::make('pages.edit', array('page' => $this->page, 'tags' => $tags));
     }
 
     public function update($slug)
     {
-        $page = $this->getPageBySlug($slug);
-
-        if ($page->update($this->input))
+        if ($this->page->update($this->input))
         {
             return Redirect::route('pages.show', $slug);
         }
 
         return Redirect::route('pages.edit', $slug)
             ->withInput()
-            ->withErrors($page->errors());
+            ->withErrors($this->page->errors());
     }
 
     public function delete($slug)
     {
-        //$this->getPageBySlug($slug)->delete();
+        View::share('title', 'Deleting page (i18n) "' . $this->page->title . '"');
 
-        return Redirect::route('pages.index');
+        return View::make('pages.delete', array('page' => $this->page));
     }
 
     public function destroy($slug)
     {
-        $this->getPageBySlug($slug)->delete();
+        $this->page->delete();
 
         return Redirect::route('pages.index');
     }
-
 
     public function filterInput()
     {
@@ -108,8 +102,8 @@ class PagesController extends ResourceController {
     }
 
 
-    protected function getPageBySlug($slug)
+    public function getPageBySlug($route)
     {
-        return $this->page->where('slug', '=', $slug)->first();
+        $this->page = $this->page->where('slug', '=', $route->parameter('pages'))->first();
     }
 }

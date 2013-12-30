@@ -22,6 +22,7 @@
         </li>
         <li>
             {{ Form::submit('Submit', array('class' => 'pure-button pure-button-primary')) }}
+            {{ link_to_route('pages.index', 'Cancel', array(), array('class' => 'pure-button')) }}
         </li>
     </ul>
 {{ Form::close() }}

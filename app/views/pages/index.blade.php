@@ -19,9 +19,7 @@
                     <td>{{ link_to_route('pages.edit', 'Edit', array($page->slug), array('class' => 'pure-button pure-button-primary')) }}
                     </td>
                     <td>
-                        {{ Form::open(array('method' => 'DELETE', 'route' => array('pages.destroy', $page->slug))) }}
-                        {{ Form::submit('Delete', array('class' => 'pure-button')) }}
-                        {{ Form::close() }}
+                        {{ link_to_route('pages.delete', 'Delete', array($page->slug), array('class' => 'pure-button')) }}
                     </td>
                 </tr>
             @endforeach
