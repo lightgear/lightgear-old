@@ -28,7 +28,9 @@ class PagesController extends ResourceController {
     {
         View::share('title', 'Create new page (i18n)');
 
-        return View::make('pages.create');
+        $tags = Tag::allNames();
+
+        return View::make('pages.create', compact('tags'));
     }
 
     public function store()
@@ -56,6 +58,8 @@ class PagesController extends ResourceController {
     {
         $page = $this->getPageBySlug($slug);
 
+        $tags = Tag::allNames();
+
         if (is_null($page))
         {
             return Redirect::route('pages.index');
@@ -63,7 +67,7 @@ class PagesController extends ResourceController {
 
         View::share('title', 'Editing page (i18n) "' . $page->title . '"');
 
-        return View::make('pages.edit', compact('page'));
+        return View::make('pages.edit', compact('page', 'tags'));
     }
 
     public function update($slug)
@@ -94,6 +98,7 @@ class PagesController extends ResourceController {
         return Redirect::route('pages.index');
     }
 
+
     public function filterInput()
     {
         if ( ! isset($this->input['published']))
@@ -101,6 +106,7 @@ class PagesController extends ResourceController {
             $this->input['published'] = 0;
         }
     }
+
 
     protected function getPageBySlug($slug)
     {

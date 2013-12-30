@@ -13,6 +13,10 @@
             {{ Form::textarea('body') }}
         </li>
         <li>
+            {{ Form::label('tags', 'Tags:') }}
+            {{ Form::select('tags[]', $tags, null, array('multiple' => 'multiple')) }}
+        </li>
+        <li>
             {{ Form::label('published', 'Published:') }}
             {{ Form::checkbox('published') }}
         </li>

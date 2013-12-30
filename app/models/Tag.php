@@ -1,6 +1,7 @@
 <?php
 
 class Tag extends Eloquent {
+
 	protected $guarded = array();
 
 	public static $rules = array(
@@ -15,5 +16,16 @@ class Tag extends Eloquent {
     public function pages()
     {
         return $this->belongsToMany('Page');
+    }
+
+    public static function allNames()
+    {
+        $tags = array();
+
+        foreach (self::all() as $tag) {
+            $tags[$tag->id] = $tag->name;
+        }
+
+        return $tags;
     }
 }

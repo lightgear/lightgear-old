@@ -6,7 +6,7 @@ class Page extends BaseModel {
         'title',
         'body',
         'slug',
-        'published'
+        'published',
     );
 
     public static $rules = array(
@@ -21,6 +21,24 @@ class Page extends BaseModel {
 
     public function tags()
     {
-        return $this->hasMany('Tag');
+        return $this->belongsToMany('Tag', 'pages_tags')->withTimestamps();
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::saved(function($model)
+        {
+            $input = Input::all();
+            $tags = isset($input['tags']) ? $input['tags'] : array();
+
+            return $model->tags()->sync($tags);
+        });
+
+        static::deleted(function($model)
+        {
+            return $model->tags()->sync(array());
+        });
     }
 }
