@@ -66,3 +66,24 @@ Route::resource(
         'only' => array('index', 'show')
     )
 );
+
+// Users
+Route::group(array('before' => 'auth'), function() {
+    Route::resource(
+        'users',
+        'UsersController',
+        array(
+            'except' => array('index', 'show')
+        )
+    );
+
+    Route::get('users/{users}/delete', array('uses' => 'UsersController@delete', 'as' => 'users.delete'));
+});
+
+Route::resource(
+    'users',
+    'UsersController',
+    array(
+        'only' => array('index', 'show')
+    )
+);
