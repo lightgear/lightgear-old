@@ -12,7 +12,8 @@ class UsersTableSeeder extends Seeder {
                 'username' => 'user',
                 'password' => Hash::make('user'),
                 'created_at' => new DateTime,
-                'updated_at' => new DateTime
+                'updated_at' => new DateTime,
+                'is_admin' => true
             ),
         );
 
