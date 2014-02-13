@@ -11,6 +11,11 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
         'username',
     );
 
+	public static $rules = array(
+        'username' => 'required',
+        'password' => 'required'
+    );
+
 	protected $hidden = array('password');
 
 	public function getAuthIdentifier()
