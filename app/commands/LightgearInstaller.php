@@ -37,6 +37,9 @@ class LightgearInstaller extends Command {
 
         // create admin user
         $this->createAdmin();
+
+        // create sample content
+        $this->addSampleContent();
     }
 
     protected function isInstalled()
@@ -73,7 +76,16 @@ class LightgearInstaller extends Command {
             $this->error('The password you entered don\'t match. Please try again.');
             $this->createAdmin();
         }
+    }
 
+    protected function addSampleContent()
+    {
+        $question = 'Do you wish to install sample content? [yes|no]';
+
+        if ($this->confirm($question, false))
+        {
+            $this->call('db:seed');
+        }
     }
 
 }
