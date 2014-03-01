@@ -4,5 +4,6 @@ composer.phar
 composer.lock
 .DS_Store
 Thumbs.db
-/public/assets
-/public/packages
+public/assets
+public/packages
+node_modules

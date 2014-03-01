@@ -179,8 +179,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
-		'Asset'			  => 'Lightgear\Asset\Facades\Asset',
-		'Theme'			  => 'Lightgear\Theme\Facades\Theme',
+		//'Theme'			  => 'Lightgear\Theme\Facades\Theme',
 	),
 
 );

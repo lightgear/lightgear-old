@@ -5,8 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        {{ Asset::statics() }}
-        {{ Asset::styles() }}
+        @include ('partials.top-assets')
 
     </head>
 
@@ -32,7 +31,8 @@
 
         </div>
 
-        {{ Asset::scripts() }}
+        @include ('partials.bottom-assets')
+
     </body>
 
 </html>
