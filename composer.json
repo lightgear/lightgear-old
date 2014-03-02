@@ -6,7 +6,6 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"cviebrock/eloquent-sluggable": "1.0.*",
-		"lightgear/asset": "2.*",
 		"lightgear/theme": "2.*"
 	},
 	"require-dev": {
