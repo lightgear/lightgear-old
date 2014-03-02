@@ -16,8 +16,6 @@ var paths = {
     },
     scripts: ['app/assets/scripts/**/*.js'],
     vendor: [
-        'app/assets/vendor/**/*.*',
-        'themes/sarine/assets/vendor/**/*.*',
         'themes/sarine/assets/fonts/**/*.*'
     ]
 };
