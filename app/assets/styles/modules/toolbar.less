@@ -1,3 +1,38 @@
 .toolbar {
-    line-height: 2em;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1%;
+    padding: 0 1%;
+    line-height: 2.5em;
+    color: @base-bg-color;
+    background: @dark-bg-color;
+    cursor: pointer;
+    .box-shadow(0 2px 2px 0 @medium-grey);
+    .box-sizing(border-box);
+    .rounded(0 0 0 6px);
+
+    span,
+    .user-info {
+        .offset;
+    }
+
+    .user-info {
+        float: right;
+        font-size: 90%;
+    }
+
+    a {
+        color: @base-bg-color;
+    }
+
+    &.open {
+        .rounded(0);
+
+        span,
+        .user-info {
+            position: static;
+        }
+    }
 }
