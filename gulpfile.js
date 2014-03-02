@@ -15,7 +15,7 @@ var paths = {
         ]
     },
     scripts: ['app/assets/scripts/**/*.js'],
-    vendor: [
+    fonts: [
         'themes/sarine/assets/fonts/**/*.*'
     ]
 };
@@ -32,9 +32,9 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('public/assets/scripts'));
 });
 
-gulp.task('vendor', function () {
-    return gulp.src(paths.vendor)
-        .pipe(gulp.dest('public/assets/vendor'));
+gulp.task('fonts', function () {
+    return gulp.src(paths.fonts)
+        .pipe(gulp.dest('public/assets/fonts'));
 });
  
 gulp.task('watch', function () {
@@ -42,4 +42,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.scripts, ['scripts']);
 });
 
-gulp.task('default', ['styles', 'scripts', 'vendor', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'fonts', 'watch']);
