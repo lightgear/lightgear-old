@@ -2,6 +2,8 @@
     "name": "Lightgear",
     "dependencies": {
         "ckeditor": "4",
-        "purecss": "http://yui.yahooapis.com/pure/0.4.2/pure-min.css"
+        "purecss": "http://yui.yahooapis.com/pure/0.4.2/pure-min.css",
+        "jquery": "1.11.0",
+        "jqueryui": "1.10.4"
     }
 }
