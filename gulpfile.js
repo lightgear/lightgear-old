@@ -17,6 +17,9 @@ var paths = {
     scripts: ['app/assets/scripts/**/*.js'],
     fonts: [
         'themes/sarine/assets/fonts/**/*.*'
+    ],
+    images: [
+        'themes/sarine/assets/images/**/*.*'
     ]
 };
 
@@ -36,10 +39,15 @@ gulp.task('fonts', function () {
     return gulp.src(paths.fonts)
         .pipe(gulp.dest('public/assets/fonts'));
 });
+
+gulp.task('images', function () {
+    return gulp.src(paths.images)
+        .pipe(gulp.dest('public/assets/images'));
+});
  
 gulp.task('watch', function () {
     gulp.watch(paths.styles.watch, ['styles']);
     gulp.watch(paths.scripts, ['scripts']);
 });
 
-gulp.task('default', ['styles', 'scripts', 'fonts', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'fonts', 'images', 'watch']);
