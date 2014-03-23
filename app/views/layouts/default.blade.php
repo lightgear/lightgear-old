@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @include ('partials.top-assets')
+        @include ('partials.assets-top')
 
     </head>
 
@@ -13,15 +13,14 @@
 
         @include ('partials.toolbar')
 
+        <header><h1>Your sitename</h1></header>
+
         <div class="wrapper">
 
-            <header>
-                Header
-            </header>
 
             @include ('partials.errors')
 
-            <h1>{{ $title }}</h1>
+            <h1 contenteditable="true">{{ $title }}</h1>
 
             @yield('main')
 
@@ -31,7 +30,7 @@
 
         </div>
 
-        @include ('partials.bottom-assets')
+        @include ('partials.assets-bottom')
 
     </body>
 

@@ -18,7 +18,7 @@ class PagesController extends ResourceController {
 
     public function index()
     {
-        $pages = $this->page->all();
+        $pages = $this->page->published()->get();
 
         View::share('title', 'Pages index (i18n)');
 

@@ -25,16 +25,16 @@ Route::get('logout', array('uses' => 'AuthController@logout', 'as' => 'logout'))
 
 
 // Pages
-Route::group(array('before' => 'auth'), function() {
+Route::group(array('before' => 'auth', 'prefix' => 'admin'), function() {
     Route::resource(
         'pages',
         'PagesController',
         array(
-            'except' => array('index', 'show')
+            'except' => array('index', 'show'),
         )
     );
 
-    Route::get('pages/{pages}/delete', array('uses' => 'PagesController@delete', 'as' => 'pages.delete'));
+    Route::get('pages/{pages}/delete', array('uses' => 'PagesController@delete', 'as' => 'admin.pages.delete'));
 });
 
 Route::resource(

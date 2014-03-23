@@ -10,7 +10,7 @@
         </li>
         <li>
             {{ Form::label('body', 'Body:') }}
-            {{ Form::textarea('body') }}
+            {{ Form::textarea('body', null, array('contenteditable' => 'true')) }}
         </li>
         <li>
             {{ Form::label('tags', 'Tags:') }}

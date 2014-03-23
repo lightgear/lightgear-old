@@ -41,4 +41,9 @@ class Page extends BaseModel {
             return $model->tags()->sync(array());
         });
     }
+
+    public function scopePublished($query)
+    {
+        return $query->wherePublished(1);
+    }
 }
