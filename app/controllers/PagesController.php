@@ -18,7 +18,8 @@ class PagesController extends ResourceController {
 
     public function index()
     {
-        $pages = $this->page->published()->get();
+        //$pages = $this->page->published()->get();
+        $pages = $this->page->all();
 
         View::share('title', 'Pages index (i18n)');
 
@@ -38,7 +39,7 @@ class PagesController extends ResourceController {
     {
         if ($this->page->fill($this->input)->save())
         {
-            return Redirect::route('pages.index');
+            return Redirect::route('admin.pages.index');
         }
 
         return Redirect::route('pages.create')
@@ -74,7 +75,7 @@ class PagesController extends ResourceController {
             return Redirect::route('pages.show', $slug);
         }
 
-        return Redirect::route('pages.edit', $slug)
+        return Redirect::route('admin.pages.edit', $slug)
             ->withInput()
             ->withErrors($this->page->errors());
     }
@@ -90,7 +91,7 @@ class PagesController extends ResourceController {
     {
         $this->page->delete();
 
-        return Redirect::route('pages.index');
+        return Redirect::route('admin.pages.index');
     }
 
     public function filterInput()

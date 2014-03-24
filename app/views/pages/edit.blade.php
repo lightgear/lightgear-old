@@ -2,7 +2,7 @@
 
 @section('main')
 
-{{ Form::model($page, array('method' => 'PATCH', 'route' => array('pages.update', $page->slug))) }}
+{{ Form::model($page, array('method' => 'PATCH', 'route' => array('admin.pages.update', $page->slug))) }}
     <ul>
         <li>
             {{ Form::label('title', 'Title:') }}

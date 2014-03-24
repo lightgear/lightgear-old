@@ -2,7 +2,7 @@
 
 @section('main')
 
-{{ Form::open(array('route' => 'pages.store')) }}
+{{ Form::open(array('route' => 'admin.pages.store')) }}
     <ul>
         <li>
             {{ Form::label('title', 'Title:') }}

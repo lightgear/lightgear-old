@@ -30,7 +30,7 @@ Route::group(array('before' => 'auth', 'prefix' => 'admin'), function() {
         'pages',
         'PagesController',
         array(
-            'except' => array('index', 'show'),
+            'except' => array('show'),
         )
     );
 

@@ -109,7 +109,6 @@ return array(
 
 		'Way\Generators\GeneratorsServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-		'Lightgear\Asset\AssetServiceProvider',
 		'Lightgear\Theme\ThemeServiceProvider'
 
 	),
