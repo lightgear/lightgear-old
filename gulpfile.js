@@ -7,19 +7,23 @@ var paths = {
     styles: {
         src: [
             'app/assets/styles/application.less',
-            'themes/sarine/assets/styles/sarine.less'
+            'themes/sarine/assets/styles/sarine.less',
+            'themes/cardinal/assets/styles/cardinal.less'
         ],
         watch: [
             'app/assets/styles/**/*.less',
-            'themes/sarine/assets/styles/**/*.less'
+            'themes/sarine/assets/styles/**/*.less',
+            'themes/cardinal/assets/styles/**/*.less'
         ]
     },
     scripts: ['app/assets/scripts/**/*.js'],
     fonts: [
-        'themes/sarine/assets/fonts/**/*.*'
+        'themes/sarine/assets/fonts/**/*.*',
+        'themes/cardinal/assets/fonts/**/*.*'
     ],
     images: [
-        'themes/sarine/assets/images/**/*.*'
+        'themes/sarine/assets/images/**/*.*',
+        'themes/cardinal/assets/images/**/*.*'
     ]
 };
 

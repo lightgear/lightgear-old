@@ -11,9 +11,11 @@
 
     <body>
 
-        @include ('partials.toolbar')
 
-        <header><h1>Your sitename</h1></header>
+        <header>
+            <h1>Your sitename</h1>
+            @include ('partials.user')
+        </header>
 
         <div class="wrapper">
 

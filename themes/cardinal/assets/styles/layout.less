@@ -1,0 +1,29 @@
+.wrapper {
+    width: @wrapper-width;
+    margin: 0 auto;
+    padding: 2%;
+    background: @base-bg-color;
+    .rounded(0 0 6px 6px);
+}
+
+header {
+    position: relative;
+    height: 15%;
+    padding: 2% 20%;
+    background: #5C323E;
+    color: @base-bg-color;
+    .box-shadow(0 2px 2px 0 @dark-grey);
+}
+
+footer {
+    padding: 2% 0;
+    border-top: 1px solid @dark-grey;
+}
+
+// phones only
+@media only screen and (max-width: @phone-min-width) {
+}
+
+// tablets portrait mode
+@media only screen and (min-width: @phone-min-width + 1) and (max-width: @tablet-max-width) {
+}

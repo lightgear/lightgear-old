@@ -11,12 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-    View::share('title', 'Homepage (i18n)');
-
-	return View::make('home');
-});
+Route::get('/', 'HomeController@index');
 
 // Authentication
 Route::get('login', array('uses' => 'AuthController@login', 'as' => 'login'));
@@ -26,17 +21,18 @@ Route::get('logout', array('uses' => 'AuthController@logout', 'as' => 'logout'))
 
 // Pages
 Route::group(array('before' => 'auth', 'prefix' => 'admin'), function() {
+
     Route::resource(
         'pages',
-        'PagesController',
+        'admin\PagesController',
         array(
             'except' => array('show'),
         )
     );
 
-    Route::get('pages/{pages}/delete', array('uses' => 'PagesController@delete', 'as' => 'admin.pages.delete'));
+    Route::get('pages/{pages}/delete', array('uses' => 'admin\PagesController@delete', 'as' => 'admin.pages.delete'));
 
-    Route::get('', array('uses' => 'AdminController@index', 'as' => 'admin.index'));
+    Route::get('', array('uses' => 'admin\HomeController@index', 'as' => 'admin.index'));
 });
 
 Route::resource(
