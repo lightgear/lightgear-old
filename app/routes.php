@@ -35,6 +35,8 @@ Route::group(array('before' => 'auth', 'prefix' => 'admin'), function() {
     );
 
     Route::get('pages/{pages}/delete', array('uses' => 'PagesController@delete', 'as' => 'admin.pages.delete'));
+
+    Route::get('', array('uses' => 'AdminController@index', 'as' => 'admin.index'));
 });
 
 Route::resource(
