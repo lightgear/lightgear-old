@@ -1,18 +1,23 @@
 .wrapper {
-    width: @wrapper-width;
-    margin: 0 auto;
     padding: 2%;
-    background: @base-bg-color;
-    .rounded(0 0 6px 6px);
 }
 
 header {
     position: relative;
     height: 5%;
-    padding: 2% 20%;
+    padding: 2%;
     background: #5C323E;
     color: @base-bg-color;
     .box-shadow(0 2px 2px 0 @dark-grey);
+
+    h1 {
+        float: left;
+        max-width: 30%;
+    }
+
+    .user-info {
+        float: right;
+    }
 }
 
 footer {
