@@ -2,7 +2,9 @@
 
 use Page,
     Input,
-    View;
+    View,
+    Tag,
+    Redirect;
 
 class PagesController extends \Admin\BaseController {
 
